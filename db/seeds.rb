@@ -11,7 +11,7 @@ User.create!(name:  "Example User",
              password_confirmation: "foobar",
              admin: 1)
 
-99.times do |n|
+20.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
@@ -23,29 +23,3 @@ end
 
 category = Category.create(name: "Basic 1000", description: "1000 word in daily life")
 
-100.times do
-  content = Faker::Lorem.word
-  category_id = rand(1..2)
-  Word.create! content: content, category_id: category_id
-end
-
-categories = Category.all
-30.times do
-  categories.each do |category|
-    content = Faker::Lorem.word
-    category.words.create content: content
-  end
-end
-
-words = Word.all
-3.times do
-  words.each do |word|
-    content = Faker::Lorem.word
-    word.word_answers.create content: content
-  end
-end
-
-words.each do |word|
-  content = Faker::Lorem.word
-  word.word_answers.create content: content, correct: true
-end
