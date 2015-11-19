@@ -9,5 +9,6 @@ class Word < ActiveRecord::Base
 
   accepts_nested_attributes_for :word_answers, allow_destroy: true, 
                       reject_if: lambda {|word_answer| word_answer[:content].blank?}
+
 end
 
