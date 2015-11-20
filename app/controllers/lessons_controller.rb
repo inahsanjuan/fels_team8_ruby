@@ -19,7 +19,7 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find params[:id]
     if @lesson.update_attributes lesson
-      redirect_to filter_path @lesson
+      redirect_to :controller => 'words', :action => 'show'
     else
       flash[:danger] = "Invalid"
       redirect_to root_url
