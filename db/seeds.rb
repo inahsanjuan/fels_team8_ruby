@@ -11,7 +11,7 @@ User.create!(name:  "Example User",
              password_confirmation: "foobar",
              admin: 1)
 
-99.times do |n|
+20.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
@@ -20,3 +20,6 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+category = Category.create(name: "Basic 1000", description: "1000 word in daily life")
+

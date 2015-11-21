@@ -16,4 +16,8 @@ class WordsController < ApplicationController
   	
   	@categories = Category.all
   end
+
+  def show
+    @lesson_words = Lesson.find(params[:id]).lesson_words.choosen_word
+  end
 end
